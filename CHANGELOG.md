@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 (2026-10-20)
+
+修复安装后启动失败。
+
+- **client 模块 id 与包名对齐**：`client.js` 里注册的 id 仍是旧名 `dsh-personalization`，而包名已是 `dsh-personal-settings`。宿主按包名加载 client 包，同一 id 被注册两次，Web 端报 `duplicate factory registration for "dsh-personalization"`，导致 `dsh-personal-settings: import failed`、启动失败
+- **新增 `npm run check` 的 id 一致性校验**：`scripts/check-client-id.mjs` 强制 `client.js` 的模块 id 等于 `package.json` 的 `name`，防止重命名时再漏改
+
 ## 0.1.0 (2026-10-20)
 
 首个版本。

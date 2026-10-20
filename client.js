@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: 'dsh-personalization',
+  id: 'dsh-personal-settings',
   factory: (require) => {
     const module = { exports: {} }
     const React = require('react')

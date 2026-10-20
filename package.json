@@ -1,6 +1,6 @@
 {
   "name": "dsh-personal-settings",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "个性化：一个设置页同时管理 DeepSeek Harness 的全局指令（~/.dsh/AGENTS.md）与长期记忆。",
   "type": "module",
   "main": "index.js",
@@ -15,7 +15,8 @@
     "client.js",
     "cordis.patch.yml",
     "README.md",
-    "README.en.md"
+    "README.en.md",
+    "scripts/check-client-id.mjs"
   ],
   "license": "MIT",
   "author": "XEsx630",
@@ -39,7 +40,7 @@
     "settings"
   ],
   "scripts": {
-    "check": "node --check index.js && node --check client.js"
+    "check": "node --check index.js && node --check client.js && node scripts/check-client-id.mjs"
   },
   "dsh": {
     "bundle": {
