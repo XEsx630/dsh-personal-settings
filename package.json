@@ -1,0 +1,56 @@
+{
+  "name": "dsh-personal-settings",
+  "version": "0.1.0",
+  "description": "个性化：一个设置页同时管理 DeepSeek Harness 的全局指令（~/.dsh/AGENTS.md）与长期记忆。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md"
+  ],
+  "license": "MIT",
+  "author": "XEsx630",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XEsx630/dsh-personal-settings.git"
+  },
+  "homepage": "https://github.com/XEsx630/dsh-personal-settings#readme",
+  "bugs": {
+    "url": "https://github.com/XEsx630/dsh-personal-settings/issues"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "agents-md",
+    "memory",
+    "settings"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "immediately": false
+    }
+  }
+}
